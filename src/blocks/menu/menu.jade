@@ -1,0 +1,6 @@
+mixin menu(data)
+  nav.menu&attributes(attributes)
+    ul.menu__list
+      each item in data
+        li.menu__item
+          a(href="#{item.link}").menu__link #{item.text}

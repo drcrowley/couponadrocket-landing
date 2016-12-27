@@ -1,0 +1,17 @@
+.menu {
+  vertical-align: middle;
+  display: inline-block;
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    & + & {
+      margin-left: rem(12px);
+    }
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+  }
+}

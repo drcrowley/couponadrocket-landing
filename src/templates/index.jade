@@ -1,0 +1,15 @@
+extends _layouts/layout
+include ../blocks/header/header
+include ../blocks/hero/hero
+
+block vars
+  - var title = 'Couponadrocket'; 
+  - var main = true;
+
+block header
+  +header()
+
+block main
+  +hero()
+  
+block footer

@@ -1,0 +1,22 @@
+.button {
+  background: transparent;
+  outline: none;
+  border: 0;
+  background: $yellow-color;
+  font-weight: 500;
+  border-radius: 18px;
+  padding: em(5px, 14px) em(19px, 14px);
+  cursor: pointer;
+
+  &_link {
+    background: transparent;
+    color: #fff;
+    border-bottom: 1px solid;
+    padding: 0;
+    border-radius: 0;
+    transition: border-color .2s;
+    &:hover {
+      border-color: transparent;
+    }
+  }
+}

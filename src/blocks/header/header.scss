@@ -1,0 +1,24 @@
+.header {
+  position:  absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: rem(15px);
+  padding-bottom: rem(15px);
+
+  &__holder {
+    @include holder;
+  }
+
+  &__row {
+    @include clearfix;
+  }
+
+  &__left {
+    float: left;
+  }
+
+  &__right {
+    float: right;
+  }
+}

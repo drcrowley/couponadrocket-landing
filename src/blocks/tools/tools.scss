@@ -1,0 +1,12 @@
+.tools {
+  margin-left: rem(60px);
+  display: inline-block;
+  vertical-align: middle;
+
+  &__button {
+    font-weight: 400;
+    & + & {
+      margin-left: rem(12px);
+    }
+  }
+}

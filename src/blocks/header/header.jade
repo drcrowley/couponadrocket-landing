@@ -1,0 +1,30 @@
+include ../logo/logo
+include ../menu/menu
+include ../tools/tools
+
+mixin header(data)
+  header.header&attributes(attributes)
+    .header__holder
+      .header__row
+        .header__left
+          +logo()
+        .header__right
+          +menu([
+            {
+              text: 'Главная',
+              link: '#main'
+            },
+            {
+              text: 'Как это работает',
+              link: '#how-it-works'
+            },
+            {
+              text: 'Цена',
+              link: '#price'
+            },
+            {
+              text: 'F.A.Q  ',
+              link: '#faq'
+            }
+          ])
+          +tools()
