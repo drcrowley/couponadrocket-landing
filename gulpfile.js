@@ -22,6 +22,7 @@ const jshint = require('gulp-jshint');
 const imagemin = require('gulp-imagemin');
 const plumber = require('gulp-plumber');
 const pngquant = require('imagemin-pngquant');
+const spritesmith = require('gulp.spritesmith');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const del = require('del');
@@ -128,6 +129,28 @@ gulp.task('uploads', function () {
     .pipe(gulp.dest(dirs.build + '/uploads'));
 });
 
+// Генерация спрайтов
+gulp.task('sprite', function (done) {
+  var spriteData = gulp.src(dirs.source + '/icons/*.png').pipe(spritesmith({
+    cssName: 'sprite.scss',
+    cssVarMap: function (item) {
+        // If this is a hover sprite, name it as a hover one (e.g. 'home-hover' -> 'home:hover')
+        if (item.name.indexOf('-hover') !== -1) {
+            item.name = 'icon_' + item.name.replace('-hover', ':hover');
+        // Otherwise, use the name as the selector (e.g. 'home' -> 'home')
+        } else {
+            item.name = 'icon_' + item.name;
+        }
+    },
+    imgName: 'sprite.png',
+    imgPath: '../images/sprite.png'
+  }));
+
+  spriteData.img.pipe(gulp.dest('./src/images'));
+  spriteData.css.pipe(gulp.dest('./src/styles/base'));
+  done();
+});
+
 // Очистка папки сборки
 gulp.task('clean', function () {
   return del(dirs.build + '/**/*');
@@ -136,6 +159,7 @@ gulp.task('clean', function () {
 // Сборка всего
 gulp.task('build', gulp.series(
   'clean',
+  'sprite',
   gulp.parallel('styles', 'scripts', 'templates', 'fonts', 'images', 'uploads')
 ));
 
@@ -155,6 +179,7 @@ gulp.task('watch', function () {
   gulp.watch([dirs.source + '/styles/**/*.scss', dirs.source + '/blocks/**/*.scss'], gulp.series('styles'));
   gulp.watch([dirs.source + '/templates/**/*.jade', dirs.source + '/blocks/**/*.jade'], gulp.series('templates'));
   gulp.watch([dirs.source + '/scripts/**/*.js', dirs.source + '/blocks/**/*.js'], gulp.series('scripts'));
+  gulp.watch([dirs.source + '/icons/*.{jpg,jpeg,gif,png,svg}'], gulp.series('sprite'));
   gulp.watch([dirs.source + '/images/*.{jpg,jpeg,gif,png,svg}'], gulp.series('images'));
   gulp.watch([dirs.source + '/fonts/*.{woff,woff2,ttf,eot,otf,svg}'], gulp.series('fonts'));
   gulp.watch([dirs.source + '/uploads/*'], gulp.series('uploads'));

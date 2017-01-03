@@ -1,4 +1,14 @@
 .hero {
-  height: 820px;
+  height: 850px;
+  height: 100vh;
   background: #08354d;
+  position: relative;
+
+  &__bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: rem(43px);
+  }
 }

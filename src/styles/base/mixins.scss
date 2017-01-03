@@ -24,7 +24,9 @@
 
 @mixin holder {
   margin-left: auto;
-	margin-right: auto;
-	min-width: 290px;
-  max-width: 1003px;
+  margin-right: auto;
+  min-width: 290px;
+  max-width: 1033px;
+  padding-left: rem(15px);
+  padding-right: rem(15px);
 }

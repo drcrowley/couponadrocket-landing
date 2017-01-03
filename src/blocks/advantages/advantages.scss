@@ -1,0 +1,41 @@
+.advantages {
+  &__holder {
+    @include holder;
+  }
+
+  &__list {
+    @include clearfix;
+  }
+
+  &__item {
+    float: left;
+    text-align: center;
+    padding-left: rem(45px);
+    padding-right: rem(45px);
+    box-sizing: border-box;
+    @include column(4);
+  }
+
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: rem(25px);
+
+    &_click {
+      @include sprite($icon-click);
+    }
+
+    &_people {
+      @include sprite($icon-people);
+    }
+
+    &_web {
+      @include sprite($icon-web);
+    }
+  }
+
+  &__title {
+    color: #fff;
+    font-size: rem(16px);
+  }
+}

@@ -3,6 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
   padding-top: rem(15px);
   padding-bottom: rem(15px);
 
@@ -16,9 +17,15 @@
 
   &__left {
     float: left;
+    @include mq($until: tablet) {
+      float: none;
+    }
   }
 
   &__right {
     float: right;
+    @include mq($until: tablet) {
+      float: none;
+    }    
   }
 }

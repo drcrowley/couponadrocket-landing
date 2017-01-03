@@ -179,18 +179,18 @@ $mq-media-type: all !default;
     // From: this breakpoint (inclusive)
     @if $from {
         @if type-of($from) == number {
-            $min-width: mq-px2em($from);
+            $min-width: $from;
         } @else {
-            $min-width: mq-px2em(mq-get-breakpoint-width($from, $breakpoints));
+            $min-width: mq-get-breakpoint-width($from, $breakpoints);
         }
     }
 
     // Until: that breakpoint (exclusive)
     @if $until {
         @if type-of($until) == number {
-            $max-width: mq-px2em($until);
+            $max-width: $until;
         } @else {
-            $max-width: mq-px2em(mq-get-breakpoint-width($until, $breakpoints)) - .01em;
+            $max-width: mq-get-breakpoint-width($until, $breakpoints);
         }
     }
 
@@ -198,7 +198,7 @@ $mq-media-type: all !default;
     // The browser will rely on the cascade itself.
     @if $responsive == false {
         $static-breakpoint-width: mq-get-breakpoint-width($static-breakpoint, $breakpoints);
-        $target-width: mq-px2em($static-breakpoint-width);
+        $target-width: $static-breakpoint-width;
 
         // Output only rules that start at or span our target width
         @if (

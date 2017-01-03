@@ -1,2 +1,8 @@
+include ../advantages/advantages
+include ../down-button/down-button
+
 mixin hero(data)
   .hero&attributes(attributes)
+    .hero__bottom
+      +advantages().hero__advantages
+      +down-button().hero__down-button

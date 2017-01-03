@@ -7,6 +7,12 @@
   border-radius: 18px;
   padding: em(5px, 14px) em(19px, 14px);
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  
+  &:hover {
+    background: darken($yellow-color, 10%);
+  }
 
   &_link {
     background: transparent;
@@ -16,6 +22,7 @@
     border-radius: 0;
     transition: border-color .2s;
     &:hover {
+      background: transparent;
       border-color: transparent;
     }
   }

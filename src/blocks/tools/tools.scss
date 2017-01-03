@@ -1,12 +1,29 @@
 .tools {
-  margin-left: rem(60px);
+  margin-left: rem(87px);
   display: inline-block;
   vertical-align: middle;
-
+  padding-top: rem(40px);
+  @include mq($until: mobile) {
+    margin-left: rem(27px);
+  }
   &__button {
     font-weight: 400;
+
     & + & {
       margin-left: rem(12px);
+    }
+
+    &_auth {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        left: -27px;
+        top: 5px;
+        display: inline-block;
+        vertical-align: middle;
+        @include sprite($icon-key);
+      } 
     }
   }
 }
