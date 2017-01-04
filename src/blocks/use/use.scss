@@ -1,0 +1,101 @@
+.use {
+  padding-top: rem(40px);
+  padding-bottom: rem(80px);
+  background: #f5f9fb;
+
+  &__holder {
+    @include holder;
+  }
+
+  &__list {
+    @include clearfix;
+    overflow: hidden;
+  }
+
+  &__item {
+    text-align: center;
+    @include column(3);
+    position: relative;
+    @include mq($until: tablet) {
+      display: block;
+      float: none;
+      width: auto;
+      margin-top: rem(30px);
+    }
+    &:nth-child(odd) {
+      margin-top: rem(70px);
+      @include mq($until: tablet) {
+        margin-top: rem(30px);
+      }
+    }
+
+    &:nth-child(even) {
+      &:before, &:after {
+        content: '';
+        width: 110px;
+        height: 2px;
+        background: #b9e1f4;
+        position: absolute;
+        top: 70px;
+        @include mq($until: tablet) {
+          display: none;
+        }
+      }
+
+      &:before {
+        left: -60px;
+        transform: rotate(-18deg);
+      }
+
+      &:after {
+        right: -60px;
+        transform: rotate(18deg);
+      }
+    }
+
+    &:last-child:after {
+      display: none;
+    }   
+  }
+
+  &__head {
+    margin: 0;
+    text-align: center;
+    font-size: rem(34px);
+    font-weight: 300;
+    margin-bottom: rem(54px);
+    position: relative;
+    z-index: 1
+  }
+
+  &__link {
+    color: #0ca5e5;
+  }
+
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: rem(6px);
+
+    &_target {
+      @include sprite($icon-target);
+    }
+
+    &_case {
+      @include sprite($icon-case);
+    }
+
+    &_stat {
+      @include sprite($icon-stat);
+    }
+
+    &_increase {
+      @include sprite($icon-increase);
+    }
+  }
+
+  &__title {
+    font-size: rem(18px);
+    font-weight: 700;
+  }
+}

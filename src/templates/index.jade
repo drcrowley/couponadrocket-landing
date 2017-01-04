@@ -1,6 +1,9 @@
 extends _layouts/layout
 include ../blocks/header/header
 include ../blocks/hero/hero
+include ../blocks/how-it-works/how-it-works
+include ../blocks/use/use
+include ../blocks/benefit/benefit
 
 block vars
   - var title = 'Couponadrocket'; 
@@ -11,5 +14,8 @@ block header
 
 block main
   +hero()
+  +how-it-works()
+  +use()
+  +benefit()
   
 block footer

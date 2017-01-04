@@ -1,0 +1,43 @@
+.benefit {
+  padding-top: rem(40px);
+  padding-bottom: rem(80px);
+
+  &__holder {
+    @include holder;
+  }
+
+  &__list {
+    overflow: hidden;
+  }
+
+  &__row {
+    @include clearfix;
+  }
+
+  &__head {
+    margin: 0;
+    text-align: center;
+    font-size: rem(34px);
+    font-weight: 300;
+    margin-bottom: rem(54px);
+    position: relative;
+  }
+
+  &__item {
+    max-width: 250px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__column {
+    &_4 {
+      @include column(4);
+    }
+
+    &_6 {
+      @include column(6);
+    }
+  }
+
+}

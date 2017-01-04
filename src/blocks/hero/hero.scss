@@ -1,9 +1,13 @@
 .hero {
-  height: 850px;
-  height: 100vh;
+  min-height: 850px;
+  min-height: 100vh;
   background: #08354d;
   position: relative;
 
+  @include mq($until: tablet) {
+    padding-top: rem(220px);
+  }
+  
   &__bottom {
     position: absolute;
     left: 0;

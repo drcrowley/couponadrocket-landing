@@ -1,7 +1,7 @@
 $(function () {
   $('.js-down-button').on('click', function () {
     
-    var heroHeight = $('.hero').height();
+    var heroHeight = $('.hero').outerHeight();
     
     $('html, body').animate({
       scrollTop: heroHeight

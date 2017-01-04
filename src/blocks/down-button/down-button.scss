@@ -11,7 +11,7 @@
   cursor: pointer;
   margin-top: rem(35px);
   outline: none;
-
+  animation: bounce 2.5s ease infinite;
   &:after {
     content: '';
     display: block;
@@ -21,4 +21,11 @@
     border-width: 0 0 2px 2px;
     transform: rotate(-45deg);
   }
+}
+
+
+@keyframes bounce {
+  0% { transform:translateY(0) }
+  50% { transform:translateY(-15px) }
+  100% { transform:translateY(0) }
 }
