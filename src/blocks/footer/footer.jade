@@ -1,0 +1,34 @@
+include ../logo/logo
+include ../menu/menu
+include ../contacts/contacts
+
+mixin footer(data)
+  .footer&attributes(attributes)
+    .footer__top
+      .footer__holder
+        .footer__row
+          .footer__left
+            +logo()
+          .footer__right
+            +menu([
+              {
+                text: 'Главная',
+                link: '#main'
+              },
+              {
+                text: 'Как это работает',
+                link: '#how-it-works'
+              },
+              {
+                text: 'Цена',
+                link: '#price'
+              },
+              {
+                text: 'F.A.Q  ',
+                link: '#faq'
+              }
+            ])
+            +contacts()
+    .footer__bottom
+      .footer__holder
+        a(href="#").footer__agreement Пользовательское соглашение

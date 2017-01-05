@@ -3,12 +3,13 @@
   outline: none;
   border: 0;
   background: $yellow-color;
-  font-weight: 500;
-  border-radius: 18px;
-  padding: em(5px, 14px) em(19px, 14px);
+  border-radius: 11px;
+  padding: em(8px, 14px) em(30px, 14px);
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  display: inline-block;
+  vertical-align: middle;
   
   &:hover {
     background: darken($yellow-color, 10%);

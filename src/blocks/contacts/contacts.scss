@@ -1,0 +1,20 @@
+.contacts {
+  margin-left: rem(150px);
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: rem(40px);
+  color: #fff;
+  @include mq($until: tablet) {
+   margin-left: 0;
+   display: block;
+  }
+  &__email {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    transition: border-color .2s;
+    &:hover {
+      border-color: transparent;
+    }
+  }
+}

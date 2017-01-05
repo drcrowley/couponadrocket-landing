@@ -1,0 +1,49 @@
+.faq {
+  padding-top: rem(40px);
+  padding-bottom: rem(80px);
+  background: #fbfbfb;
+
+  &__holder {
+    @include holder;
+  }
+
+  &__head {
+    margin: 0;
+    text-align: center;
+    font-size: rem(34px);
+    font-weight: 300;
+    margin-bottom: rem(54px);
+    position: relative;
+  }
+
+  &__item {
+    margin-top: rem(30px);
+  }
+
+  &__title {
+    font-size: rem(18px);
+    font-weight: 500;
+    margin-bottom: rem(22px);
+    @include clearfix;
+  }
+
+  &__label {
+    color: #818181;
+    float: left;
+    margin-right: rem(5px);
+  }
+
+  &__question {
+    overflow: hidden;
+    color: #12aaeb;
+  }
+
+  &__answer {
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #cecece;
+    font-size: rem(16px);
+    padding: rem(22px) rem(40px);
+  }
+
+}

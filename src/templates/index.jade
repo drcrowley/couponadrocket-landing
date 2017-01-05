@@ -4,6 +4,9 @@ include ../blocks/hero/hero
 include ../blocks/how-it-works/how-it-works
 include ../blocks/use/use
 include ../blocks/benefit/benefit
+include ../blocks/tariffs/tariffs
+include ../blocks/faq/faq
+include ../blocks/footer/footer
 
 block vars
   - var title = 'Couponadrocket'; 
@@ -17,5 +20,8 @@ block main
   +how-it-works()
   +use()
   +benefit()
-  
+  +tariffs()
+  +faq()
+
 block footer
+  +footer()

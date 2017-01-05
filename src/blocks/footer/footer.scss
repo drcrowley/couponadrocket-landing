@@ -1,0 +1,46 @@
+.footer {
+  background: #212121;
+
+  &__holder {
+    @include holder;
+  }
+
+  &__top {
+    padding-top: rem(20px);
+    padding-bottom: rem(42px);
+  }
+
+  &__row {
+    @include clearfix;
+  }
+
+  &__left {
+    float: left;
+    @include mq($until: tablet) {
+      float: none;
+    }     
+  }
+
+  &__right {
+    float: right;
+    @include mq($until: tablet) {
+      float: none;
+    }    
+  }
+
+  &__bottom {
+    text-align: center;
+    background: #151515;
+    padding: rem(10px) 0;
+  }
+
+  &__agreement {
+    color: #818181;
+    transition: color .2s;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff
+    }
+  }
+}
