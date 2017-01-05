@@ -4,10 +4,12 @@
   vertical-align: middle;
   padding-top: rem(40px);
   color: #fff;
+
   @include mq($until: tablet) {
    margin-left: 0;
    display: block;
   }
+  
   &__email {
     color: #fff;
     text-decoration: none;

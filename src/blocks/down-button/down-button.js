@@ -3,7 +3,7 @@ $(function () {
     
     var heroHeight = $('.hero').outerHeight();
     
-    $('html, body').animate({
+    $('html, body').stop().animate({
       scrollTop: heroHeight
     }, 500);
     
