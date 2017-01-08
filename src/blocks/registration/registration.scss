@@ -1,0 +1,44 @@
+.registration {
+  padding: rem(40px) 0;
+  
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #12aaeb;
+    margin: 0;
+    margin-bottom: rem(15px);
+  }
+
+  &__form {
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: rem(30px);
+  }
+
+  &__sub-title {
+    text-align: center;
+    color: #597a96;
+    margin: 0;
+  }
+
+  &__link {
+    color: #0ca5e5;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    transition: border-color .2s;
+    &:hover {
+      border-color: transparent;
+    }    
+  }
+
+  &__agree {
+    margin-top: rem(29px);
+  }
+
+  &__button {
+    margin-top: rem(30px);
+  }
+}

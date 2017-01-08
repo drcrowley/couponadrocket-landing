@@ -1,0 +1,14 @@
+.page {
+  padding-bottom: rem(180px);
+  position: relative;
+  min-height: 100%;
+  box-sizing: border-box;
+
+  @include mq($until: tablet) {
+    padding-bottom: 0;
+  }
+
+  &__holder {
+    @include holder;
+  }
+}

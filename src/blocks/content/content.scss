@@ -1,0 +1,12 @@
+.content {
+  padding: rem(40px) 0;
+  
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #12aaeb;
+    margin: 0;
+    margin-bottom: rem(40px);
+  }
+}

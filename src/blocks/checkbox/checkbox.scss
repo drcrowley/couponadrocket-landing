@@ -1,0 +1,50 @@
+.checkbox {
+  position: relative;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    left: -9999px;
+  }
+
+  &__label {
+    display: block;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 20px;
+      height: 19px;
+      margin-right: rem(11px);
+      background: $blue-color;
+      box-sizing: border-box;
+      border-radius: 2px;
+      float: left;
+    }
+
+    &:after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      display: block;
+      transition: transform .2s;
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      transform: scale(0);
+      @include sprite($icon-checkbox);
+    }
+  }
+
+  &__input:checked + &__label:after {
+    transform: scale(1);
+  }
+
+  &__text {
+    display: block;
+    overflow: hidden;
+    color: #597a96;
+  }
+}

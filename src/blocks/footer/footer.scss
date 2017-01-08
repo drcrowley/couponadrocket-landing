@@ -1,5 +1,13 @@
 .footer {
   background: #212121;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  @include mq($until: tablet) {
+    position: static;
+  }
 
   &__holder {
     @include holder;

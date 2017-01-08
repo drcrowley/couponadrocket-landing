@@ -3,7 +3,7 @@ include ../menu/menu
 include ../contacts/contacts
 
 mixin footer(data)
-  .footer&attributes(attributes)
+  footer.footer&attributes(attributes)
     .footer__top
       .footer__holder
         .footer__row
@@ -31,4 +31,4 @@ mixin footer(data)
             +contacts()
     .footer__bottom
       .footer__holder
-        a(href="#").footer__agreement Пользовательское соглашение
+        a(href="agreement.html").footer__agreement Пользовательское соглашение

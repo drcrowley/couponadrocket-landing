@@ -1,0 +1,27 @@
+extends _layouts/layout
+include ../blocks/header/header
+include ../blocks/footer/footer
+include ../blocks/checkbox/checkbox
+
+block vars
+  - var title = 'Регистрация'; 
+
+block header
+  +header()
+
+block main
+  .page__holder
+    .registration
+      h1.registration__title РЕГИСТРАЦИЯ
+      h2.registration__sub-title Введите свои данные
+      form.form.registration__form
+        .form__item
+          input(type="text", placeholder="Имя пользователя").form__input
+        .form__item
+          input(type="email", placeholder="Ваш адрес e-mail").form__input
+        .form__item
+          input(type="password", placeholder="Пароль").form__input
+        +checkbox({id: 'reg-agree', text: 'Я принимаю условия <br/><a href="agreement.html" class="registration__link">Пользовательского соглашения</a>'}).form__checkbox.registration__agree
+        button(type="submit").button.button_form.button_block.form__button.registration__button Зарегистрироваться
+block footer
+  +footer()

@@ -27,4 +27,20 @@
       border-color: transparent;
     }
   }
+
+  &_form {
+    background: $blue-color;
+    border-radius: 3px;
+    color: #fff;
+    text-transform: uppercase;
+    padding: em(12px, 14px) em(30px, 14px);  
+    &:hover {
+      background: darken($blue-color, 10%);
+    }    
+  }
+
+  &_block {
+    display: block;
+    width: 100%;
+  }
 }
