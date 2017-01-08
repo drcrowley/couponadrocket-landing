@@ -3,4 +3,4 @@ mixin menu(data)
     ul.menu__list
       each item in data
         li.menu__item
-          a(href="#{item.link}").menu__link #{item.text}
+          a(href=main ? '#{item.link}' : '/#{item.link}').menu__link #{item.text}
