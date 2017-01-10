@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, minimal-ui">
+
+  <title>Список купонов</title>
+
+  <style>
+    .couponadrocket {
+      background-color: #154e6b;
+      background-color: rgba(21, 78, 107, .88);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+/*      z-index: 2147483647;*/
+      text-align: center;
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      line-height: 1.2;
+      font-weight: 400;
+      font-size: 0;
+      box-sizing: border-box;
+      padding: 40px;
+      overflow: auto;
+    }
+    .couponadrocket:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+      width: 1px;
+      margin-right: -1px;
+    }
+    .couponadrocket__holder {
+      min-width: 195px;
+      max-width: 956px;
+      padding: 26px;
+      box-sizing: border-box;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: left;
+    }
+    .couponadrocket__box {
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .couponadrocket__content {
+      padding: 22px 45px;
+    }
+    .couponadrocket__bottom {
+      padding: 28px 45px 46px;
+      background: #f8f8f8;
+    }
+    .couponadrocket__head {
+      font-size: 32px;
+      color: #12aaeb;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .couponadrocket__sub-head {
+      font-size: 14px;
+      font-size: #597a96;
+      color: #597a96;
+      text-align: center;
+    }
+    .couponadrocket__list {
+      margin-top: 13px;
+    }
+    .couponadrocket__item {
+      display: inline-block;
+      vertical-align: top;
+      font-size: 14px;
+      width: 203px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .couponadrocket__input {
+      position: absolute;
+      opacity: 0;
+      left: -9999px;
+    }
+    .couponadrocket__label {
+      display: block;
+      padding: 14px 10px 14px 37px;
+      cursor: pointer;
+    }
+    .couponadrocket__label:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 20px;
+      width: 20px;
+      height: 19px;
+      border-radius: 2px;
+      background: #129fdd;
+    }
+    .couponadrocket__label:after {
+      content: '\2714';
+      position: absolute;
+      line-height: 1;
+      left: 4px;
+      top: 22px;
+      font-weight: 700;
+      color: #fff;
+      opacity: 0;
+      transform: scale(0);
+      transition: transform .1s;
+    }
+    .couponadrocket__input:checked + .couponadrocket__label:after {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .couponadrocket__title {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .couponadrocket__text {
+      margin-bottom: 2px;
+      color: #597a96;
+    }
+    .couponadrocket__link {
+      color: #305ccf;
+      font-weight: 700;
+    }
+    .couponadrocket__image {
+      display: block;
+      width: 134px;
+      height: 116px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .couponadrocket__logo {
+      width: 190px;
+      height: 46px;
+      display: block;
+    }
+
+  </style>
+</head>
+<body style="overflow: hidden;">
+  <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
+  </div>
+
+  <div class="couponadrocket">
+    <div class="couponadrocket__holder">
+      <div class="couponadrocket__box">
+        <div class="couponadrocket__content">
+          <div class="couponadrocket__head">Спасибо за заказ!</div>
+          <div class="couponadrocket__sub-head">Выберите 3 любых купона от наших партнеров.</div>
+          <div class="couponadrocket__sub-head">Выбранные купоны будут отправлены на ваш е-mail!</div>
+
+          <div class="couponadrocket__list">
+            <div class="couponadrocket__item">
+              <input type="checkbox" name="coupon-1", id="coupon-1" class="couponadrocket__input">
+              <label for="coupon-1" class="couponadrocket__label">
+                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
+                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
+                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
+                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
+              </label>
+            </div>
+            <div class="couponadrocket__item">
+              <input type="checkbox" name="coupon-2", id="coupon-2" class="couponadrocket__input">
+              <label for="coupon-2" class="couponadrocket__label">
+                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
+                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
+                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
+                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
+              </label>
+            </div>
+            <div class="couponadrocket__item">
+              <input type="checkbox" name="coupon-3", id="coupon-3" class="couponadrocket__input">
+              <label for="coupon-3" class="couponadrocket__label">
+                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
+                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
+                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
+                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
+              </label>
+            </div>
+            <div class="couponadrocket__item">
+              <input type="checkbox" name="coupon-4", id="coupon-4" class="couponadrocket__input">
+              <label for="coupon-4" class="couponadrocket__label">
+                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
+                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
+                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
+                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
+              </label>
+            </div>
+            <div class="couponadrocket__item">
+              <input type="checkbox" name="coupon-5", id="coupon-5" class="couponadrocket__input">
+              <label for="coupon-5" class="couponadrocket__label">
+                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
+                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
+                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
+                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
+              </label>
+            </div>
+            <div class="couponadrocket__item">
+              <input type="checkbox" name="coupon-6", id="coupon-6" class="couponadrocket__input">
+              <label for="coupon-6" class="couponadrocket__label">
+                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
+                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
+                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
+                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
+              </label>
+            </div>
+            <div class="couponadrocket__item">
+              <input type="checkbox" name="coupon-7", id="coupon-7" class="couponadrocket__input">
+              <label for="coupon-7" class="couponadrocket__label">
+                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
+                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
+                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
+                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
+              </label>
+            </div>
+            <div class="couponadrocket__item">
+              <input type="checkbox" name="coupon-8", id="coupon-8" class="couponadrocket__input">
+              <label for="coupon-8" class="couponadrocket__label">
+                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
+                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
+                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
+                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
+              </label>
+            </div>
+          </div>          
+        </div>
+        <div class="couponadrocket__bottom">
+          <img src="build/images/logo_black.png" class="couponadrocket__logo" alt="">
+        </div>      
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>
