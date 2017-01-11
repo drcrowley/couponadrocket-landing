@@ -42,17 +42,15 @@
       vertical-align: middle;
       text-align: left;
     }
-    .couponadrocket__box {
+    .couponadrocket__form {
       background: #fff;
       border-radius: 4px;
       overflow: hidden;
+      display: block;
     }
     .couponadrocket__content {
       padding: 22px 45px;
-    }
-    .couponadrocket__bottom {
-      padding: 28px 45px 46px;
-      background: #f8f8f8;
+      box-sizing: border-box;
     }
     .couponadrocket__head {
       font-size: 32px;
@@ -77,7 +75,7 @@
       box-sizing: border-box;
       position: relative;
     }
-    .couponadrocket__input {
+    .couponadrocket__checkbox {
       position: absolute;
       opacity: 0;
       left: -9999px;
@@ -109,7 +107,7 @@
       transform: scale(0);
       transition: transform .1s;
     }
-    .couponadrocket__input:checked + .couponadrocket__label:after {
+    .couponadrocket__checkbox:checked + .couponadrocket__label:after {
       opacity: 1;
       transform: scale(1);
     }
@@ -126,18 +124,82 @@
       font-weight: 700;
     }
     .couponadrocket__image {
-      display: block;
+      display: table-cell;
       width: 134px;
       height: 116px;
       border-radius: 4px;
       margin-bottom: 12px;
+    }
+    .couponadrocket__bottom {
+      padding: 18px 45px 46px;
+      background: #f8f8f8;
+      display: table;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .couponadrocket__left {
+      display: table-cell;
+      vertical-align: middle;
+      width: 30%;
+      box-sizing: border-box;
+      padding-right: 20px;
+    }
+    .couponadrocket__right {
+      display: table-cell;
+      vertical-align: middle;
+      width: 70%;
+      padding-top: 20px;
+      box-sizing: border-box;
+      white-space: nowrap;
     }
     .couponadrocket__logo {
       width: 190px;
       height: 46px;
       display: block;
     }
+    .couponadrocket__input {
+      width: 76%;
+      display: inline-block;
+      border-radius: 2px;
+      background: #eaedf0;
+      border: 0;
+      outline: none;
+      padding: 15px 17px;
+      box-sizing: border-box;
+      font-size: 12px;
+    }
+    .couponadrocket__button {
+      margin-left: 19px;
+      background: #12aaeb;
+      border-radius: 2px;
+      font-size: 12px;
+      outline: none;
+      border: 0;
+      color: #fff;
+      padding: 15px 17px;
+      text-transform: uppercase;
+    }
 
+    @media (max-width: 736px) {
+      .couponadrocket {
+        padding: 0;
+      }
+      .couponadrocket__right, 
+      .couponadrocket__left {
+        width: auto;
+        display: block;
+      }
+      .couponadrocket__input {
+        width: 100%;
+        display: block;
+      }
+      .couponadrocket__button {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+      }
+    }
   </style>
 </head>
 <body style="overflow: hidden;">
@@ -164,94 +226,75 @@
 
   <div class="couponadrocket">
     <div class="couponadrocket__holder">
-      <div class="couponadrocket__box">
+      <form class="couponadrocket__form" id="couponadrocket-form">
         <div class="couponadrocket__content">
           <div class="couponadrocket__head">Спасибо за заказ!</div>
           <div class="couponadrocket__sub-head">Выберите 3 любых купона от наших партнеров.</div>
           <div class="couponadrocket__sub-head">Выбранные купоны будут отправлены на ваш е-mail!</div>
 
-          <div class="couponadrocket__list">
-            <div class="couponadrocket__item">
-              <input type="checkbox" name="coupon-1", id="coupon-1" class="couponadrocket__input">
-              <label for="coupon-1" class="couponadrocket__label">
-                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
-                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
-                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
-                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
-              </label>
-            </div>
-            <div class="couponadrocket__item">
-              <input type="checkbox" name="coupon-2", id="coupon-2" class="couponadrocket__input">
-              <label for="coupon-2" class="couponadrocket__label">
-                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
-                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
-                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
-                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
-              </label>
-            </div>
-            <div class="couponadrocket__item">
-              <input type="checkbox" name="coupon-3", id="coupon-3" class="couponadrocket__input">
-              <label for="coupon-3" class="couponadrocket__label">
-                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
-                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
-                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
-                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
-              </label>
-            </div>
-            <div class="couponadrocket__item">
-              <input type="checkbox" name="coupon-4", id="coupon-4" class="couponadrocket__input">
-              <label for="coupon-4" class="couponadrocket__label">
-                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
-                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
-                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
-                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
-              </label>
-            </div>
-            <div class="couponadrocket__item">
-              <input type="checkbox" name="coupon-5", id="coupon-5" class="couponadrocket__input">
-              <label for="coupon-5" class="couponadrocket__label">
-                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
-                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
-                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
-                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
-              </label>
-            </div>
-            <div class="couponadrocket__item">
-              <input type="checkbox" name="coupon-6", id="coupon-6" class="couponadrocket__input">
-              <label for="coupon-6" class="couponadrocket__label">
-                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
-                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
-                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
-                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
-              </label>
-            </div>
-            <div class="couponadrocket__item">
-              <input type="checkbox" name="coupon-7", id="coupon-7" class="couponadrocket__input">
-              <label for="coupon-7" class="couponadrocket__label">
-                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
-                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
-                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
-                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
-              </label>
-            </div>
-            <div class="couponadrocket__item">
-              <input type="checkbox" name="coupon-8", id="coupon-8" class="couponadrocket__input">
-              <label for="coupon-8" class="couponadrocket__label">
-                <div class="couponadrocket__title">Диагностика двигателя беслпатно</div>
-                <img src="http://placehold.it/134x116" alt="" class="couponadrocket__image">
-                <div class="couponadrocket__text">Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!</div>
-                <a href="http://avtoservice.ru" class="couponadrocket__link" target="_blank">avtoservice.ru</a>   
-              </label>
-            </div>
+          <div class="couponadrocket__list" id="couponadrocket-list">
+
           </div>          
         </div>
         <div class="couponadrocket__bottom">
-          <img src="build/images/logo_black.png" class="couponadrocket__logo" alt="">
-        </div>      
-      </div>
+          <div class="couponadrocket__left">
+            <img src="build/images/logo_black.png" class="couponadrocket__logo" alt="">
+          </div>
+          <div class="couponadrocket__right">
+            <input type="email" placeholder="Ваш адрес e-mail" name="email" id="email" class="couponadrocket__input">
+            <button class="couponadrocket__button" type="submit">Отправить</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 
+  <script>
+    (function() {
+      var apiUrl = 'http://94.142.139.199:8080',
+          couponListDiv = document.getElementById('couponadrocket-list'),
+          couponForm = document.getElementById('couponadrocket-form'),
+          couponListHtml = '';
+          couponsArr = [
+            {
+              id: 1, 
+              url: 'http://avtoservice.ru', 
+              imgUrl: 'http://placehold.it/134x116',
+              titel: 'Диагностика двигателя беслпатно',
+              descr: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!', 
+              text: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!'
+            },
+            {
+              id: 2, 
+              url: 'http://avtoservice.ru', 
+              imgUrl: 'http://placehold.it/134x116',
+              titel: 'Диагностика двигателя беслпатно',
+              descr: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!', 
+              text: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!'
+            }
+          ];
+          couponsArr.forEach(function(coupon) {
+            var couponItemTemplate = '<div class="couponadrocket__item">' +
+                                        '<input type="checkbox" name="'+ coupon.id +'", id="'+ coupon.id +'" class="couponadrocket__checkbox">' +
+                                        '<label for="'+ coupon.id +'" class="couponadrocket__label">' +
+                                          '<div class="couponadrocket__title">'+ coupon.titel +'</div>' +
+                                            '<img src="'+ coupon.imgUrl +'" alt="'+ coupon.titel +'" class="couponadrocket__image">' +
+                                            '<div class="couponadrocket__text">'+ coupon.text +'</div>' +
+                                            '<a href="'+ apiUrl +'/purchase/visit/'+ coupon.id +'" class="couponadrocket__link" target="_blank">'+ coupon.url +'</a>' +
+                                        '</label>' +
+                                      '</div>';
+            couponListHtml+= couponItemTemplate;            
+          });
+
+      couponListDiv.innerHTML = couponListHtml;
+
+      couponForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        console.log(event)
+      });
+    })();
+
+  </script>
   
 </body>
 </html>
