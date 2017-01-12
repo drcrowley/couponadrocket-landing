@@ -11,13 +11,13 @@ block header
 
 block main
   .page__holder
-    .registration
-      h1.registration__title Авторизация
-      form.form.registration__form
+    .enter
+      h1.enter__title Авторизация
+      form.form.enter__form.js-auth-form
         .form__item
-          input(type="email", placeholder="Ваш адрес e-mail").form__input
+          input(type="email", placeholder="Ваш адрес e-mail", name="email", required).form__input
         .form__item
-          input(type="password", placeholder="Пароль").form__input
-        button(type="submit").button.button_form.button_block.form__button.registration__button Войти
+          input(type="password", placeholder="Пароль", name="pwd", required).form__input
+        button(type="submit").button.button_form.button_block.form__button.enter__button Войти
 block footer
   +footer()

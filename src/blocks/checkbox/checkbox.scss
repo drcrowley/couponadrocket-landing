@@ -12,7 +12,7 @@
     cursor: pointer;
     box-sizing: border-box;
     position: relative;
-
+    
     &:before {
       content: '';
       width: 20px;
@@ -22,6 +22,11 @@
       box-sizing: border-box;
       border-radius: 2px;
       float: left;
+
+
+      .parsley-error & {
+        background: #ecc9c6;
+      }
     }
 
     &:after {
@@ -46,5 +51,9 @@
     display: block;
     overflow: hidden;
     color: #597a96;
+
+    .parsley-error & {
+      color: #de8a83;
+    }    
   }
 }

@@ -1,5 +1,5 @@
 mixin checkbox(data)
   .checkbox&attributes(attributes)
-    input(type="checkbox", name="#{data.id}", id="#{data.id}", checked=data.checked, disabled=data.disabled).checkbox__input
+    input(type="checkbox", name="#{data.id}", id="#{data.id}", checked=data.checked, disabled=data.disabled, required=data.required, data-parsley-required-message=data.errorMessage).checkbox__input
     label.checkbox__label(for="#{data.id}")
       span.checkbox__text!= data.text

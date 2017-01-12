@@ -25,6 +25,7 @@ const pngquant = require('imagemin-pngquant');
 const spritesmith = require('gulp.spritesmith');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
+const ghPages = require('gulp-gh-pages');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 const fs = require('fs');
@@ -172,6 +173,12 @@ gulp.task('serve', function () {
       notify: false,
       timestamps: false
   });
+});
+
+// Отправка в GH pages (ветку gh-pages репозитория)
+gulp.task('deploy', function() {
+  return gulp.src(dirs.build + '/**/*')
+    .pipe(ghPages());
 });
 
 // Cлежение за изменениями

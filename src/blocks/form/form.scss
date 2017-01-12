@@ -9,11 +9,26 @@
     outline: none;
     font-size: rem(12px);
     box-sizing: border-box;
+
+    &.parsley-error {
+      background: #ecc9c6;
+    }
   }
 
   &__item {
     & + & {
       margin-top: rem(17px);
+    }
+  }
+
+  .parsley-errors-list {
+    margin: 0;
+    padding: rem(10px) 0;
+    list-style: none;
+
+    li {
+      list-style: none;
+      color: #de8a83;
     }
   }
 }

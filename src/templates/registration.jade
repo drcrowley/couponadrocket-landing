@@ -11,17 +11,20 @@ block header
 
 block main
   .page__holder
-    .registration
-      h1.registration__title РЕГИСТРАЦИЯ
-      h2.registration__sub-title Введите свои данные
-      form.form.registration__form
+    .enter
+      h1.enter__title РЕГИСТРАЦИЯ
+      h2.enter__sub-title Введите свои данные
+      form.form.enter__form.js-reg-form
         .form__item
-          input(type="text", placeholder="Имя пользователя").form__input
+          input(type="email", placeholder="Ваш адрес e-mail", name="email", required).form__input
         .form__item
-          input(type="email", placeholder="Ваш адрес e-mail").form__input
-        .form__item
-          input(type="password", placeholder="Пароль").form__input
-        +checkbox({id: 'reg-agree', text: 'Я принимаю условия <br/><a href="agreement.html" class="registration__link">Пользовательского соглашения</a>'}).form__checkbox.registration__agree
-        button(type="submit").button.button_form.button_block.form__button.registration__button Зарегистрироваться
+          input(type="password", placeholder="Пароль", name="pwd", required).form__input
+        +checkbox({
+          id: 'reg-agree', 
+          required: true, 
+          text: 'Я принимаю условия <br/><a href="agreement.html" class="enter__link">Пользовательского соглашения</a>',
+          errorMessage: 'Необходимо принять условия пользовательского соглашения',
+        }).form__checkbox.enter__agree
+        button(type="submit").button.button_form.button_block.form__button.enter__button Зарегистрироваться
 block footer
   +footer()
