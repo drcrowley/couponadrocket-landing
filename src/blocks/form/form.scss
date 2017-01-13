@@ -21,6 +21,18 @@
     }
   }
 
+  &__error {
+    display: none;
+    color: #de8a83;
+    font-size: rem(16px);
+    text-align: center;
+    margin-top: rem(20px);
+  }
+
+  &_error &__error {
+    display: block;
+  }
+
   .parsley-errors-list {
     margin: 0;
     padding: rem(10px) 0;
