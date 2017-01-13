@@ -53,7 +53,9 @@
             <form class="form enter__form js-reg-form">
               <div class="form__item"> <input type="email" placeholder="Ваш адрес e-mail" name="email" required class="form__input"> </div>
               <div class="form__item"> <input type="password" placeholder="Пароль" name="pwd" required class="form__input"> </div>
-              <div class="checkbox form__checkbox enter__agree"> <input type="checkbox" name="reg-agree" id="reg-agree" required="required" data-parsley-required-message="Необходимо принять условия пользовательского соглашения" class="checkbox__input" /> <label for="reg-agree" class="checkbox__label"><span class="checkbox__text">Я принимаю условия <br/><a href="agreement.html" class="enter__link">Пользовательского соглашения</a></span></label>                </div> <button type="submit" class="button button_form button_block form__button enter__button">Зарегистрироваться</button> </form>
+              <div class="checkbox form__checkbox enter__agree"> <input type="checkbox" name="reg-agree" id="reg-agree" required="required" data-parsley-required-message="Необходимо принять условия пользовательского соглашения" class="checkbox__input" /> <label for="reg-agree" class="checkbox__label"><span class="checkbox__text">Я принимаю условия <br/><a href="agreement.html" class="enter__link">Пользовательского соглашения</a></span></label>                </div> <button type="submit" class="button button_form button_block form__button enter__button">Зарегистрироваться</button>
+              <div class="form__error">Ошибка регистрации. <br> Такой email уже зарегистрирован</div>
+            </form>
           </div>
         </div>
       </main>
@@ -85,6 +87,7 @@
           <div class="footer__holder"><a href="agreement.html" class="footer__agreement">Пользовательское соглашение</a></div>
         </div>
       </footer>
+      <div class="preloader"></div>
     </div>
     <script src="scripts/script.js"></script>
   </body>
