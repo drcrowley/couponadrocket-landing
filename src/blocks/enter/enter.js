@@ -2,6 +2,7 @@ $(function () {
   var regForm = $('.js-reg-form'),
       authForm = $('.js-auth-form'),
       html = $('html'),
+      errorEl = $('.form__error'),
       apiUrl = 'http://94.142.139.199:8080/coupon-web/rs/',
       cabinetUrl = 'http://yandex.ru';
 
@@ -26,7 +27,14 @@ $(function () {
 
     delete regData['reg-agree'];
 
-    request('user/register', regData, form);
+    var requestParams = {
+      url: 'user/register',
+      data: regData,
+      form: form,
+      errorMessage: 'Ошибка регистрации. <br> Такой email уже зарегистрирован'
+    };
+
+    request(requestParams);
   });
 
   authForm.on('submit', function(event) {
@@ -38,28 +46,37 @@ $(function () {
     formData.forEach(function(item) {
       authData[item.name] = item.value;
     });
-    request('user/login', authData, form);
+
+    var requestParams = {
+      url: 'user/login',
+      data: authData,
+      form: form,
+      errorMessage: 'Ошибка авторизации.'
+    };
+    request(requestParams);
   });
 
-  function request(url, data, form) {
+  function request(params) {
     html.addClass('t-preloader');
-
+    params.form.removeClass('form_error');
     $.ajax({
       type: 'POST',
       contentType: 'application/json; charset=utf-8',
       dataType: 'json',
-      url: apiUrl + url,
-      data: JSON.stringify(data),
+      url: apiUrl + params.url,
+      data: JSON.stringify(params.data),
       success: function(data) {
         if (data.status == 'OK') {
           window.location.replace(cabinetUrl);
         } else {
-          form.addClass('form_error');
+          params.form.addClass('form_error');
+          errorEl.html(params.errorMessage);
           html.removeClass('t-preloader');
         }
       },
       error: function(data, message) {
-        console.log(message);
+        params.form.addClass('form_error');
+        errorEl.html('Ошибка сервера');
         html.removeClass('t-preloader');
       }
     });    
