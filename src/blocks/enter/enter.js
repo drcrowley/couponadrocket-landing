@@ -4,7 +4,7 @@ $(function () {
       html = $('html'),
       errorEl = $('.form__error'),
       apiUrl = 'http://94.142.139.199:8080/coupon-web/rs/',
-      cabinetUrl = 'http://yandex.ru';
+      cabinetUrl = 'http://localhost:3002';
 
   if (regForm.length) {
     regForm.parsley();
@@ -63,11 +63,13 @@ $(function () {
       type: 'POST',
       contentType: 'application/json; charset=utf-8',
       dataType: 'json',
+      crossDomain: true,
       url: apiUrl + params.url,
       data: JSON.stringify(params.data),
       success: function(data) {
+        console.log(data);
         if (data.status == 'OK') {
-          window.location.replace(cabinetUrl);
+          window.location.replace(cabinetUrl + '/#/auth?token=' + data.tan);
         } else {
           params.form.addClass('form_error');
           errorEl.html(params.errorMessage);
