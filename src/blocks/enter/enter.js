@@ -4,7 +4,7 @@ $(function () {
       html = $('html'),
       errorEl = $('.form__error'),
       apiUrl = 'http://94.142.139.199:8080/coupon-web/rs/',
-      cabinetUrl = 'http://localhost:3002';
+      cabinetUrl = 'http://localhost:3000';
 
   if (regForm.length) {
     regForm.parsley();

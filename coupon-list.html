@@ -33,6 +33,18 @@
       width: 1px;
       margin-right: -1px;
     }
+    .couponadrocket__close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 18px;
+      color: #12aaeb;
+      background: #fff;
+      border-radius: 3px;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+    }
     .couponadrocket__holder {
       min-width: 195px;
       max-width: 956px;
@@ -41,6 +53,7 @@
       display: inline-block;
       vertical-align: middle;
       text-align: left;
+      position: relative;
     }
     .couponadrocket__form {
       background: #fff;
@@ -60,7 +73,6 @@
     }
     .couponadrocket__sub-head {
       font-size: 14px;
-      font-size: #597a96;
       color: #597a96;
       text-align: center;
     }
@@ -106,6 +118,12 @@
       opacity: 0;
       transform: scale(0);
       transition: transform .1s;
+    }
+    .couponadrocket__label:hover .couponadrocket__description {
+      opacity: 1;
+    }
+    .couponadrocket__box {
+      position: relative;
     }
     .couponadrocket__checkbox:checked + .couponadrocket__label:after {
       opacity: 1;
@@ -179,15 +197,36 @@
       padding: 15px 17px;
       text-transform: uppercase;
     }
+    .couponadrocket__description {
+      position: absolute;
+      top: 0; 
+      bottom: 0;  
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 2px 2px 10px #bfbfbf;
+      box-sizing: border-box;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity .3s;
+      line-height: 1.4;
+    }
 
-    @media (max-width: 736px) {
+    @media (max-width: 768px) {
       .couponadrocket {
         padding: 0;
+      }
+      .couponadrocket__content {
+        padding: 22px 25px;
       }
       .couponadrocket__right, 
       .couponadrocket__left {
         width: auto;
         display: block;
+      }
+      .couponadrocket__right {
+        padding-left: 0;
       }
       .couponadrocket__input {
         width: 100%;
@@ -200,6 +239,17 @@
         margin-top: 20px;
       }
     }
+    
+    @media (max-width: 320px) {
+      .couponadrocket__logo {
+        width: 100%;
+        height: auto;
+      }
+      .couponadrocket:before {
+        display: none;
+      }
+    }
+    
   </style>
 </head>
 <body style="overflow: hidden;">
@@ -224,16 +274,14 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate vel quis aperiam, molestias culpa soluta accusamus repellat corrupti, provident laborum eaque esse voluptas et nam! Esse quo libero omnis doloremque doloribus aperiam eveniet fugit perferendis accusamus suscipit quasi aliquid alias nemo ratione, cumque, eos consequatur magni in impedit? Doloremque accusantium numquam architecto nobis aliquam, placeat, illo autem eaque! Repellendus consectetur dolore neque reiciendis velit vero tempora sequi dolorum perferendis eligendi non, temporibus, nam ut pariatur at harum quo porro fugit mollitia obcaecati nesciunt amet nisi. Cumque non laudantium esse doloribus, magni mollitia repudiandae, iste consequuntur. Ipsa natus dolorum pariatur, sunt?</p>
   </div>
 
-  <div class="couponadrocket">
+  <div class="couponadrocket" id="couponadrocket">
     <div class="couponadrocket__holder">
       <form class="couponadrocket__form" id="couponadrocket-form">
         <div class="couponadrocket__content">
           <div class="couponadrocket__head">Спасибо за заказ!</div>
           <div class="couponadrocket__sub-head">Выберите 3 любых купона от наших партнеров.</div>
           <div class="couponadrocket__sub-head">Выбранные купоны будут отправлены на ваш е-mail!</div>
-
           <div class="couponadrocket__list" id="couponadrocket-list">
-
           </div>          
         </div>
         <div class="couponadrocket__bottom">
@@ -246,14 +294,17 @@
           </div>
         </div>
       </form>
+      <button class="couponadrocket__close" id="couponadrocket-close" type="button">X</button>
     </div>
   </div>
 
   <script>
     (function() {
       var apiUrl = 'http://94.142.139.199:8080',
+          coupon = document.getElementById('couponadrocket'),
           couponListDiv = document.getElementById('couponadrocket-list'),
           couponForm = document.getElementById('couponadrocket-form'),
+          couponClose = document.getElementById('couponadrocket-close'),
           couponListHtml = '';
           couponsArr = [
             {
@@ -271,16 +322,67 @@
               titel: 'Диагностика двигателя беслпатно',
               descr: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!', 
               text: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!'
-            }
+            },
+            {
+              id: 3, 
+              url: 'http://avtoservice.ru', 
+              imgUrl: 'http://placehold.it/134x116',
+              titel: 'Диагностика двигателя беслпатно',
+              descr: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!', 
+              text: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!'
+            },
+            {
+              id: 4, 
+              url: 'http://avtoservice.ru', 
+              imgUrl: 'http://placehold.it/134x116',
+              titel: 'Диагностика двигателя беслпатно',
+              descr: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!', 
+              text: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!'
+            },
+            {
+              id: 5, 
+              url: 'http://avtoservice.ru', 
+              imgUrl: 'http://placehold.it/134x116',
+              titel: 'Диагностика двигателя беслпатно',
+              descr: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!', 
+              text: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!'
+            },
+            {
+              id: 6, 
+              url: 'http://avtoservice.ru', 
+              imgUrl: 'http://placehold.it/134x116',
+              titel: 'Диагностика двигателя беслпатно',
+              descr: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!', 
+              text: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!'
+            },
+            {
+              id: 7, 
+              url: 'http://avtoservice.ru', 
+              imgUrl: 'http://placehold.it/134x116',
+              titel: 'Диагностика двигателя беслпатно',
+              descr: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!', 
+              text: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!'
+            },
+            {
+              id: 8, 
+              url: 'http://avtoservice.ru', 
+              imgUrl: 'http://placehold.it/134x116',
+              titel: 'Диагностика двигателя беслпатно',
+              descr: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!', 
+              text: 'Диагностика любых автомобилей при предьявлении купона БЕСЛПАТНО!'
+            }                     
           ];
           couponsArr.forEach(function(coupon) {
             var couponItemTemplate = '<div class="couponadrocket__item">' +
                                         '<input type="checkbox" name="'+ coupon.id +'", id="'+ coupon.id +'" class="couponadrocket__checkbox">' +
                                         '<label for="'+ coupon.id +'" class="couponadrocket__label">' +
-                                          '<div class="couponadrocket__title">'+ coupon.titel +'</div>' +
+                                          '<div class="couponadrocket__box">' +
+                                            '<div class="couponadrocket__title">'+ coupon.titel +'</div>' +
                                             '<img src="'+ coupon.imgUrl +'" alt="'+ coupon.titel +'" class="couponadrocket__image">' +
                                             '<div class="couponadrocket__text">'+ coupon.text +'</div>' +
                                             '<a href="'+ apiUrl +'/purchase/visit/'+ coupon.id +'" class="couponadrocket__link" target="_blank">'+ coupon.url +'</a>' +
+                                            '<div class="couponadrocket__description">'+ coupon.descr +'</div>' +
+                                          '</div>' +
                                         '</label>' +
                                       '</div>';
             couponListHtml+= couponItemTemplate;            
@@ -288,9 +390,15 @@
 
       couponListDiv.innerHTML = couponListHtml;
 
+      coupon.addEventListener("click", function(event) {
+        if (event.target == coupon || event.target == couponClose) {
+          coupon.style.display = 'none';
+        }
+      });
+
       couponForm.addEventListener("submit", function(event) {
         event.preventDefault();
-        console.log(event)
+        console.log(event);
       });
     })();
 
