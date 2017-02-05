@@ -31,7 +31,8 @@ $(function () {
       url: 'user/register',
       data: regData,
       form: form,
-      errorMessage: 'Ошибка регистрации. <br> Такой email уже зарегистрирован'
+      errorMessage: 'Ошибка регистрации. <br> Такой email уже зарегистрирован',
+      redirectUrl: '/registration-confirm.html'
     };
 
     request(requestParams);
@@ -67,9 +68,9 @@ $(function () {
       url: apiUrl + params.url,
       data: JSON.stringify(params.data),
       success: function(data) {
-        console.log(data);
+        var redirectUrl = params.redirectUrl ? params.redirectUrl : cabinetUrl + '/#/auth?token=' + data.tan;
         if (data.status == 'OK') {
-          window.location.replace(cabinetUrl + '/#/auth?token=' + data.tan);
+          window.location.replace(redirectUrl);
         } else {
           params.form.addClass('form_error');
           errorEl.html(params.errorMessage);

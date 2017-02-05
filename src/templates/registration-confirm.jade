@@ -1,0 +1,20 @@
+extends _layouts/layout
+include ../blocks/header/header
+include ../blocks/footer/footer
+
+block vars
+  - var title = 'Пользовательское соглашение'; 
+
+block header
+  +header()
+
+block main
+  .page__holder
+    .content
+      h1.content__title Подтверждение регистрации
+      .content__box
+        h2  Lorem ipsum dolor
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis excepturi iste veritatis beatae at earum rem, optio quasi atque, minus culpa esse eligendi, reiciendis, laborum placeat doloribus odio architecto porro!
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis excepturi iste veritatis beatae at earum rem, optio quasi atque, minus culpa esse eligendi, reiciendis, laborum placeat doloribus odio architecto porro!
+block footer
+  +footer()
