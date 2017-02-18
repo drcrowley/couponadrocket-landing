@@ -157,7 +157,7 @@
     }
     .couponadrocket__image {
       display: table-cell;
-      width: 100%;
+      max-width: 100%;
       border-radius: 4px;
       margin-bottom: 12px;
     }
@@ -187,6 +187,10 @@
       width: 190px;
       height: 46px;
       display: block;
+      background-image: url(logo_blue.png);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
     }
     .couponadrocket__input {
       width: 76%;
@@ -246,8 +250,8 @@
       top: 50%;
       left: 50%;
       border: 10px solid #f3f3f3;
-      border-top: 10px solid #12aaeb;; 
-      border-bottom: 10px solid #12aaeb;; 
+      border-top: 10px solid #12aaeb;
+      border-bottom: 10px solid #12aaeb;
       border-radius: 50%;
       width: 50px;
       height: 50px;
@@ -258,7 +262,97 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    .couponadrocket_blue {
+      background-color: #154e6b;
+      background-color: rgba(21, 78, 107, .88);
+    }
+    .couponadrocket_blue .couponadrocket__close {
+      color: #12aaeb;
+    }
+    .couponadrocket_blue .couponadrocket__head {
+      color: #12aaeb;
+    }
+    .couponadrocket_blue .couponadrocket__button {
+      background: #12aaeb;
+    }
+    .couponadrocket_blue .couponadrocket__preloader:after {
+      border-color: #12aaeb;
+    }
+    .couponadrocket_blue .couponadrocket__label:before {
+      background: #12aaeb;
+    }
+    .couponadrocket_blue .couponadrocket__logo {
+      background-image: url(logo_blue.png);
+    }
+    
+    .couponadrocket_green {
+      background-color: #2e692e;
+      background-color: rgba(46, 105, 46, .88);   
+    }
+    .couponadrocket_green .couponadrocket__close {
+      color: #31cc32;
+    }
+    .couponadrocket_green .couponadrocket__head {
+      color: #31cc32;
+    }
+    .couponadrocket_green .couponadrocket__button {
+      background: #31cc32;
+    }
+    .couponadrocket_green .couponadrocket__preloader:after {
+      border-color: #31cc32;
+    }
+    .couponadrocket_green .couponadrocket__label:before {
+      background: #31cc32;
+    }
+    .couponadrocket_green .couponadrocket__logo {
+      background-image: url(logo_green.png);
+    }
 
+    .couponadrocket_red {
+      background-color: #8c1314;
+      background-color: rgba(140, 19, 20, .88);
+    }    
+    .couponadrocket_red .couponadrocket__close {
+      color: #cc0001;
+    }
+    .couponadrocket_red .couponadrocket__head {
+      color: #cc0001;
+    }
+    .couponadrocket_red .couponadrocket__button {
+      background: #cc0001;
+    }
+    .couponadrocket_red .couponadrocket__preloader:after {
+      border-color: #cc0001;
+    }
+    .couponadrocket_red .couponadrocket__label:before {
+      background: #cc0001;
+    }
+    .couponadrocket_red .couponadrocket__logo {
+      background-image: url(logo_red.png);
+    }
+    
+    .couponadrocket_orange {
+      background-color: #a06021;
+      background-color: rgba(160, 96, 33, .88);
+    }
+    .couponadrocket_orange .couponadrocket__close {
+      color: #ff9934;
+    }
+    .couponadrocket_orange .couponadrocket__head {
+      color: #ff9934;
+    }
+    .couponadrocket_orange .couponadrocket__button {
+      background: #ff9934;
+    }
+    .couponadrocket_orange .couponadrocket__preloader:after {
+      border-color: #ff9934;
+    }
+    .couponadrocket_orange .couponadrocket__label:before {
+      background: #ff9934;
+    }
+    .couponadrocket_orange .couponadrocket__logo {
+      background-image: url(logo_orange.png);
+    }
 
     @media (max-width: 768px) {
       .couponadrocket {
@@ -286,7 +380,7 @@
         margin-top: 20px;
       }
     }
-    
+
     @media (max-width: 320px) {
       .couponadrocket__logo {
         width: 100%;
@@ -303,9 +397,11 @@
   
   <script>
     (function() {
+
+      var params = {tan: 'yzUchPu1OvLuwB8SPKHk', pageId: 23, colorTheme: 'red'};
       var apiUrl = 'http://94.142.139.199:8080/coupon-visitor/rs',
           couponLimit = 3,
-          couponHtml = '<div class="couponadrocket" id="couponadrocket">' +
+          couponHtml = '<div class="couponadrocket couponadrocket_'+ params.colorTheme +'" id="couponadrocket">' +
                             '<div class="couponadrocket__holder">' +
                               '<form class="couponadrocket__form" id="couponadrocket-form">' +
                                 '<div class="couponadrocket__content">' +
@@ -318,9 +414,7 @@
                                 '</div>' +
                                 '<div class="couponadrocket__bottom">' +
                                   '<div class="couponadrocket__left">' +
-                                    '<a href="http://couponadrocket.ru">' +
-                                      '<img src="build/images/logo_black.png" class="couponadrocket__logo" alt="">' +
-                                    '</a>' +
+                                    '<a class="couponadrocket__logo" href="http://couponadrocket.ru"></a>' +
                                   '</div>' +
                                   '<div class="couponadrocket__right">' + 
                                     '<input type="email" placeholder="Ваш адрес e-mail" name="email" id="couponadrocket-email"  class="couponadrocket__input">' +
@@ -342,8 +436,10 @@
 
             var couponPreloader = document.getElementById('couponadrocket-preloader');
 
-      request('/show/coupons/yzUchPu1OvLuwB8SPKHk/23', function(data) {
-        renderCoupons(data);
+      request('/show/coupons/' + params.tan + '/' + params.pageId, {}, 'GET', function(data) {
+        if(data.coupons.length) {
+          renderCoupons(data);
+        }
       });
 
       function renderCoupons(data) {
@@ -438,8 +534,8 @@
           var errors = [],
               errorMessages = '';
           
-          if (calcChecked() < 3) {
-            errors.push('Необходимо выбрать три купона');
+          if (calcChecked() < 1) {
+            errors.push('Необходимо выбрать купоны');
           }
 
           if (!couponEmail.value.length) {
@@ -458,25 +554,26 @@
         }
 
         function sendSelectCoupons() {
-          var params = checkedCoupons.slice(0);
-          params.unshift(couponEmail.value);
+          var params = {
+            coupons: checkedCoupons,
+            email: couponEmail.value,
+            sessionId: data.sessionId
+          };
 
-          var url = '/purchase/coupons/' + data.sessionId;
+          var url = '/purchase/coupons';
 
-          params.forEach(function(param) {
-            url+= '/' + param;
-          });
-
-          request(url, function(data) {
+          request(url, params, 'POST', function(data) {
             coupon.style.display = 'none';
-          });          
+          }); 
         }
       }
 
-      function request(url, cb) {
+      function request(url, params, reqType, cb) {
         couponPreloader.style.display = 'block';
-        var request = new XMLHttpRequest();
-        request.open('GET', apiUrl + url, true);
+        var request = new XMLHttpRequest(),
+            params = JSON.stringify(params);
+
+        request.open(reqType, apiUrl + url, true);
         request.onload = function() {
           couponPreloader.style.display = 'none';
           if (request.status >= 200 && request.status < 400) {
@@ -490,7 +587,7 @@
           }
         };
         request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-        request.send();        
+        request.send(params);        
       }
 
     })();
