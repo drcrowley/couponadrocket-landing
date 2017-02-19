@@ -15,9 +15,9 @@ block main
       h1.enter__title Авторизация
       form.form.enter__form.js-auth-form
         .form__item
-          input(type="email", placeholder="Ваш адрес e-mail", name="email", required).form__input
+          input(type="email", placeholder="Ваш адрес e-mail", name="email", required, maxlength="129").form__input
         .form__item
-          input(type="password", placeholder="Пароль", name="pwd", required).form__input
+          input(type="password", placeholder="Пароль", name="pwd", required, maxlength="40").form__input
         button(type="submit").button.button_form.button_block.form__button.enter__button Войти
         .form__error
 block footer

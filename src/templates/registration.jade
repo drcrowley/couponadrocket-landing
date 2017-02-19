@@ -16,9 +16,13 @@ block main
       h2.enter__sub-title Введите свои данные
       form.form.enter__form.js-reg-form
         .form__item
-          input(type="email", placeholder="Ваш адрес e-mail", name="email", required).form__input
+          input(type="email", placeholder="Ваш адрес e-mail", name="email", required, maxlength="129").form__input
         .form__item
-          input(type="password", placeholder="Пароль", name="pwd", required).form__input
+          input(type="password", placeholder="Пароль", name="pwd", required, maxlength="40").form__input
+        .form__item
+          input(type="password", placeholder="Реферальная ссылка", name="protege").form__input
+        .form__item
+          input(type="password", placeholder="Промокод", name="promoCode", maxlength="6").form__input              
         +checkbox({
           id: 'reg-agree', 
           required: true, 
