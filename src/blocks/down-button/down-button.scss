@@ -9,9 +9,12 @@
   display: block;
   position: relative;
   cursor: pointer;
-  margin-top: rem(35px);
+  margin-top: rem(15px);
   outline: none;
   animation: bounce 2.5s ease infinite;
+  @include mq($until: tablet) {
+    margin-top: rem(30px);
+  }
   &:after {
     content: '';
     display: block;
