@@ -472,11 +472,17 @@
 
             var couponPreloader = document.getElementById('couponadrocket-preloader');
 
-      request('/show/coupons/' + params.tan + '/' + params.pageId, {}, 'GET', function(data) {
-        if(data.coupons.length) {
-          renderCoupons(data);
-        }
-      });
+      // request('/show/coupons/' + params.tan + '/' + params.pageId, {}, 'GET', function(data) {
+      //   if(data.coupons.length) {
+      //     renderCoupons(data);
+      //   }
+      // });
+
+      var data = {"pageId":null,"coupons":[{"id":53,"url":"https://www.google.de","imgUrl":"banner.jpg","titel":"test2","descr":"ttest2","text":"test2"},{"id":54,"url":"https://www.google.de","imgUrl":"banner.jpg","titel":"test3","descr":"test3","text":"test3"},{"id":55,"url":"https://www.google.de","imgUrl":"banner.jpg","titel":"test4","descr":"kiuhlkjh","text":"lkjhlkj"},{"id":56,"url":"https://www.google.de","imgUrl":"banner.jpg","titel":"test5","descr":"lkjhlkjh","text":"lkjhlökhlö"},{"id":57,"url":"https://www.google.de","imgUrl":"banner.jpg","titel":"test7","descr":"liuhoiluhlihu","text":"lkjhlkjhlkjh"}],"sessionId":"Kai8r7VqBN","status":"OK"};
+
+      if(data.coupons.length) {
+        renderCoupons(data);
+      }
 
       function renderCoupons(data) {
 
