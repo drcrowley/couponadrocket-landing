@@ -19,11 +19,16 @@ $(function () {
         formData = form.serializeArray(),
         regData = {
           news: false
-        };
+        },
+        searchData = $.parseParams(document.location.search);
 
     formData.forEach(function(item) {
       regData[item.name] = item.value;
     });
+
+    if (searchData.ref) {
+      regData.protege = searchData.ref;      
+    }
 
     delete regData['reg-agree'];
 
@@ -73,13 +78,13 @@ $(function () {
           window.location.replace(redirectUrl);
         } else {
           params.form.addClass('form_error');
-          errorEl.html(params.errorMessage);
+          errorEl.html(data.message);
           html.removeClass('t-preloader');
         }
       },
       error: function(data, message) {
         params.form.addClass('form_error');
-        errorEl.html('Ошибка сервера');
+        errorEl.html(data.message);
         html.removeClass('t-preloader');
       }
     });    

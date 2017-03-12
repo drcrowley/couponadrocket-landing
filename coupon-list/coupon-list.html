@@ -10,7 +10,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-/*      z-index: 2147483647;*/
+      z-index: 2147483647;
       text-align: center;
       font-family: "Arial", "Helvetica", sans-serif;
       line-height: 1.2;
@@ -63,6 +63,7 @@
       padding: 45px 35px 10px 35px;
       box-sizing: border-box;
       position: relative;
+      text-align: center;
     }
     .couponadrocket__errors {
       font-size: 14px;
@@ -88,6 +89,8 @@
       margin-top: 35px;
       margin-left: -17px;
       margin-right: -17px;
+      display: inline-block;
+      text-align: left;
     }
     .couponadrocket__item {
       display: inline-block;
@@ -145,6 +148,7 @@
     .couponadrocket__title {
       margin-bottom: 15px;
       padding-left: 35px;
+      overflow: hidden;
     }
     .couponadrocket__title-link {
       color: #129fdd;
@@ -153,7 +157,7 @@
       position: relative;
       z-index: 1;      
     }
-    .couponadrocket__text {
+    .couponadrocket__description {
       margin-bottom: 10px;
       color: #597a96;
     }
@@ -167,9 +171,11 @@
     .couponadrocket__bottom {
       padding: 18px 45px 45px;
       background: #f8f8f8;
+      box-sizing: border-box;
+    }
+    .couponadrocket__bottom-row {
       display: table;
       width: 100%;
-      box-sizing: border-box;
     }
     .couponadrocket__left {
       display: table-cell;
@@ -195,9 +201,14 @@
       background-position: 0 0;
       background-size: cover;
     }
+    .couponadrocket__email {
+      position: relative;
+      padding-right: 125px;
+      box-sizing: border-box;
+    }
     .couponadrocket__input {
-      width: 76%;
-      display: inline-block;
+      display: block;
+      width: 100%;
       border-radius: 2px;
       background: #eaedf0;
       border: 0;
@@ -216,6 +227,10 @@
       color: #fff;
       padding: 15px 17px;
       text-transform: uppercase;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
     }
     .couponadrocket__button:disabled {
       background: #b7b7b7 !important;
@@ -224,11 +239,11 @@
       color: #129fdd;
       text-decoration: underline;
     }
-    .couponadrocket__desc-link:hover + .couponadrocket__description {
+    .couponadrocket__desc-link:hover + .couponadrocket__text {
       opacity: 1;
       z-index: 1;
     }
-    .couponadrocket__description {
+    .couponadrocket__text {
       position: absolute;
       top: 0; 
       bottom: 25px;  
@@ -407,6 +422,12 @@
         margin-left: 0;
         margin-top: 20px;
       }
+      .couponadrocket__button {
+        position: static;
+      }
+      .couponadrocket__email {
+        padding: 0;
+      }
     }
 
     @media (max-width: 320px) {
@@ -441,19 +462,21 @@
                                   '<button class="couponadrocket__close" id="couponadrocket-close" type="button">X</button>' + 
                                 '</div>' +
                                 '<div class="couponadrocket__bottom">' +
-                                  '<div class="couponadrocket__left">' +
-                                    '<a class="couponadrocket__logo" href="http://couponadrocket.ru" target="_blank"></a>' +
-                                  '</div>' +
-                                  '<div class="couponadrocket__right">' + 
-                                    '<div class="couponadrocket__email">' + 
-                                      '<input type="email" placeholder="Ваш адрес e-mail" name="email" id="couponadrocket-email"  class="couponadrocket__input">' +
-                                      '<button class="couponadrocket__button" id="couponadrocket-submit" type="submit" disabled>Отправить</button>' +
+                                  '<div class="couponadrocket__bottom-row">' +
+                                    '<div class="couponadrocket__left">' +
+                                      '<a class="couponadrocket__logo" href="http://couponadrocket.ru" target="_blank"></a>' +
                                     '</div>' +
-                                    '<div class="couponadrocket__confirm">' + 
-                                      '<input type="checkbox" name="confirm" id="couponadrocket-confirm" class="couponadrocket__checkbox">' +
-                                      '<label for="couponadrocket-confirm" class="couponadrocket__label">' +
-                                        '<div class="couponadrocket__confirm-text">Я принимаю условия пользовательского соглашения</div>' +
-                                      '</label>' +
+                                    '<div class="couponadrocket__right">' + 
+                                      '<div class="couponadrocket__email">' + 
+                                        '<input type="email" placeholder="Ваш адрес e-mail" name="email" id="couponadrocket-email"  class="couponadrocket__input">' +
+                                        '<button class="couponadrocket__button" id="couponadrocket-submit" type="submit" disabled>Отправить</button>' +
+                                      '</div>' +
+                                      '<div class="couponadrocket__confirm">' + 
+                                        '<input type="checkbox" name="confirm" id="couponadrocket-confirm" class="couponadrocket__checkbox">' +
+                                        '<label for="couponadrocket-confirm" class="couponadrocket__label">' +
+                                          '<div class="couponadrocket__confirm-text">Я принимаю условия пользовательского соглашения</div>' +
+                                        '</label>' +
+                                      '</div>' +
                                     '</div>' +
                                   '</div>' +
                                 '</div>' +
@@ -505,9 +528,9 @@
                                           '<a href="'+ apiUrl +'/purchase/visit/' + data.sessionId + '/' + coupon.id +'"  target="_blank" class="couponadrocket__image-link">' +
                                             '<img src="'+ coupon.imgUrl +'" alt="'+ coupon.titel +'" class="couponadrocket__image">' +
                                           '</a>' +
-                                          '<div class="couponadrocket__text">'+ coupon.text +'</div>' +
-                                          '<div class="couponadrocket__desc-link">Условия использования</div>' +
                                           '<div class="couponadrocket__description">'+ coupon.descr +'</div>' +
+                                          '<div class="couponadrocket__desc-link">Условия использования</div>' +
+                                          '<div class="couponadrocket__text">'+ coupon.text +'</div>' +
                                         '</div>' +
                                       '</label>' +
                                     '</div>';
@@ -554,7 +577,7 @@
           }          
         }
 
-        function changeConfirm() {
+        function changeConfirm(event) {
           couponSubmit.disabled = !event.target.checked;
         }
 

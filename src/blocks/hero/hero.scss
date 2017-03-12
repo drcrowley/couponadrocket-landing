@@ -35,7 +35,7 @@
   }
   
   &__bottom {
-    margin-top: rem(50px);
+    margin-top: rem(35px);
     @include mq($until: tablet) {
       position: relative;
       padding-bottom: rem(50px);
@@ -49,9 +49,26 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 33%;
+    padding-bottom: 36%;
     @include mq($until: tablet) {
       padding-bottom: 70%;
+    }
+  }
+
+  &__preview {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+
+    &_played {
+      display: none;
+    }
+
+    @include mq($until: tablet) {
+      display: none;
     }
   }
 
