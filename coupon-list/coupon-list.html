@@ -495,12 +495,23 @@
             document.body.appendChild(couponDiv);
 
             var couponPreloader = document.getElementById('couponadrocket-preloader');
+            var couponsUrl
 
-      request('/show/coupons/' + params.tan + '/' + params.pageId, {}, 'GET', function(data) {
-        if(data.coupons.length) {
-          renderCoupons(data);
-        }
-      });
+            if (params.previewLink) {
+              couponsUrl = params.previewLink;
+            } else {
+              couponsUrl = params.test ? '/show/couponsTest' : '/show/coupons/';
+              couponsUrl += params.tan + '/' + params.pageId;
+            }       
+
+            request(couponsUrl, {}, 'GET', function(data) {
+              if(data.coupons && data.coupons.length) {
+                if (params.testCoupon) {
+                  data.coupons.unshift(params.testCoupon);
+                }
+                renderCoupons(data);
+              }
+            });
 
       function renderCoupons(data) {
 
@@ -550,14 +561,14 @@
 
         coupon.addEventListener("click", function(event) {
           if (event.target == coupon || event.target == couponClose) {
-            coupon.style.display = 'none';
+            couponDiv.removeChild(coupon);
           }
         });
 
         couponForm.addEventListener("submit", function(event) {
           event.preventDefault();
           validate(function() {
-            sendSelectCoupons();
+            sendCoupons();
           });
         });
 
@@ -627,18 +638,22 @@
           }
         }
 
-        function sendSelectCoupons() {
-          var params = {
-            coupons: checkedCoupons,
-            email: couponEmail.value,
-            sessionId: data.sessionId
-          };
+        function sendCoupons() {
+          if (params.test) {
+            couponDiv.removeChild(coupon);
+          } {
+            var params = {
+              coupons: checkedCoupons,
+              email: couponEmail.value,
+              sessionId: data.sessionId
+            };
 
-          var url = '/purchase/coupons';
+            var url = '/purchase/coupons';
 
-          request(url, params, 'POST', function(data) {
-            coupon.style.display = 'none';
-          }); 
+            request(url, params, 'POST', function(data) {
+              coupon.style.display = 'none';
+            }); 
+          }
         }
       }
 
