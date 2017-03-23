@@ -101,9 +101,7 @@
                                           coupon.titel +
                                         '</a>' +
                                       '</div>' +
-                                      '<a href="'+ visitUrl +'"  target="_blank" class="couponadrocket__image-link">' +
-                                        '<img src="'+ coupon.imgUrl +'" alt="'+ coupon.titel +'" class="couponadrocket__image">' +
-                                      '</a>' +
+                                      '<img src="'+ coupon.imgUrl +'" alt="'+ coupon.titel +'" class="couponadrocket__image">' +
                                       '<div class="couponadrocket__description">'+ coupon.descr +'</div>' +
                                       '<div class="couponadrocket__desc-link">Условия использования</div>' +
                                       '<div class="couponadrocket__text">'+ coupon.text +'</div>' +
