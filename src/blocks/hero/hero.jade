@@ -4,12 +4,15 @@ include ../down-button/down-button
 mixin hero(data)
   .hero&attributes(attributes)
     .hero__holder
-      h2.hero__title Увеличь продажи на 112%
+      h2.hero__title Увеличьте свои продажи до 112%
       .hero__sub-title с новой системой продвижения для интернет-магазинов
       .hero__media
         iframe(width="100%" height="100%" src="//www.youtube.com/embed/VJ38wSFbM3A?rel=0" frameborder="0" allowfullscreen).hero__video
         img(src="images/video-preview.jpg", alt="").hero__preview.js-hero-play
-      a(href="registration.html").button.hero__button.js-reg Попробовать бесплатно
+      .hero__box
+        a(href="registration.html").hero__action-link
+          img(src="images/action.jpg").hero__action-image
+        a(href="registration.html").button.hero__button.js-reg Попробовать бесплатно
     .hero__bottom
       +advantages().hero__advantages
-      +down-button().hero__down-button
+      //- +down-button().hero__down-button

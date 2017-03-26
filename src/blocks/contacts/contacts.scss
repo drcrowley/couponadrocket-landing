@@ -9,6 +9,15 @@
    margin-left: 0;
    display: block;
   }
+
+  &__phone {
+    margin-bottom: rem(5px);
+  }
+
+  &__phone-link {
+    color: #fff;
+    text-decoration: none;
+  }
   
   &__email {
     color: #fff;

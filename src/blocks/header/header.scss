@@ -1,7 +1,7 @@
 .header {
   z-index: 1;
   padding-top: rem(15px);
-  padding-bottom: rem(45px);
+  padding-bottom: rem(35px);
   background: #083750;
 
   &__holder {
@@ -27,7 +27,7 @@
   }
 
   .t-main & {
-    background: transparent;
+    // background: transparent;
     position:  absolute;
     top: 0;
     left: 0;

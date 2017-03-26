@@ -7,11 +7,14 @@
     @include clearfix;
   }
 
+  &__row {
+    white-space: nowrap;
+  }
+
   &__item {
     float: left;
-    text-align: center;
-    padding-left: rem(45px);
-    padding-right: rem(45px);
+    padding-left: rem(35px);
+    padding-right: rem(35px);
     box-sizing: border-box;
     @include column(4);
     @include mq($until: tablet) {
@@ -30,7 +33,6 @@
   &__icon {
     display: inline-block;
     vertical-align: middle;
-    margin-bottom: rem(25px);
 
     &_click {
       @include sprite($icon-click);
@@ -46,7 +48,17 @@
   }
 
   &__title {
-    color: #fff;
+    color: #252525;
     font-size: rem(16px);
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: rem(20px);
+    white-space: normal;
+  }
+
+  &__important {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: rem(20px);
   }
 }

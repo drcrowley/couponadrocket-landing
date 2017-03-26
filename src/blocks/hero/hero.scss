@@ -1,25 +1,28 @@
 .hero {
   min-height: 850px;
-  min-height: 100vh;
   position: relative;
-  padding-top: rem(120px);
+  padding-top: rem(150px);
   box-sizing: border-box;
-  background: #083750 url(../images/hero-bg.jpg) no-repeat 50% 0;
+  background: #fff url(../images/hero-bg.jpg) no-repeat 50% 0;
+  padding-bottom: rem(30px);
+  
   @include mq($until: tablet) {
     padding-top: rem(220px);
   }
 
   &__holder {
-    text-align: center;
     @include holder;
   }
 
   &__title {
-    font-size: rem(45px);
+    font-size: rem(33px);
+    text-transform: uppercase;
     margin: 0;
-    color: #fff;
-    font-weight: 400;
+    color: #252525;
+    font-weight: 700;
     margin-bottom: rem(5px);
+    text-align: center;
+
     @include mq($until: tablet) {
       font-size: rem(30px);
     }
@@ -28,7 +31,9 @@
   &__sub-title {
     font-size: rem(24px);
     font-weight: 300;
-    color: #fff;
+    color: #252525;
+    text-align: center;
+
     @include mq($until: tablet) {
       font-size: rem(18px);
     }
@@ -36,15 +41,21 @@
   
   &__bottom {
     margin-top: rem(35px);
+
     @include mq($until: tablet) {
       position: relative;
-      padding-bottom: rem(50px);
     }
+  }
+
+  &__box {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 650px;
   }
 
   &__media {
     margin-top: rem(40px);
-    margin-bottom: rem(50px);
+    margin-bottom: rem(20px);
     max-width: 650px;
     position: relative;
     margin-left: auto;
@@ -83,6 +94,20 @@
   }
 
   &__button {
+    display: inline-block;
+    vertical-align: middle;
     font-size: rem(16px);
+    text-transform: uppercase;
+    font-weight: 700;
   }
+
+  &__action-link {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(50px);
+  }
+
+  &__action-image {
+    display: block;
+  }  
 }

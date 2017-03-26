@@ -2,7 +2,8 @@
   margin-left: rem(87px);
   display: inline-block;
   vertical-align: middle;
-  padding-top: rem(30px);
+  padding-top: rem(25px);
+  padding-bottom: rem(5px);
   @include mq($until: mobile) {
     margin-left: rem(27px);
   }

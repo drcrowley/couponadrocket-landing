@@ -1,8 +1,6 @@
 .how-it-works {
-  background: #5bbff1;
   padding-top: rem(40px);
   padding-bottom: rem(140px);
-  color: #fff;
 
   &__title {
     font-size: 18px;
@@ -10,7 +8,6 @@
   }
 
   &__list {
-    overflow: hidden;
   }
   
   &__holder {
@@ -47,7 +44,7 @@
   &__item {
     @include clearfix;
     & + & {
-      margin-top: rem(227px);
+      margin-top: rem(210px);
       @include mq($until: tablet) {
         margin-top: rem(50px);
       }
@@ -86,17 +83,32 @@
   }
 
   &__item_first &__image {
-    top: -150px;
-    right: -20px;
+    top: -20px;
+    left: 160px;
+    width: 130px;
   }
 
   &__item_two &__image {
-    top: -65px;
-    left: -80px;
+    top: -30px;
+    left: 0px;
+    width: 365px;
   }
 
   &__item_three &__image {
-    top: -130px;
-    right: -30px;
+    top: -40px;
+    right: 0;
+    width: 430px;
+  }
+
+  &__item_four &__image {
+    top: -10px;
+    left: 0px;
+    width: 430px;
+  }
+
+  &__item_five &__image {
+    top: -60px;
+    right: 0px;
+    width: 405px;
   } 
 }
