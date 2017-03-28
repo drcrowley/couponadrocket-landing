@@ -4,9 +4,12 @@
   vertical-align: middle;
   padding-top: rem(25px);
   padding-bottom: rem(5px);
+  position: relative;
+
   @include mq($until: mobile) {
     margin-left: rem(27px);
   }
+
   &__button {
     font-weight: 400;
     border-radius: 11px;
@@ -28,6 +31,52 @@
         vertical-align: middle;
         @include sprite($icon-key);
       } 
+    }
+  }
+
+  &__contacts-button {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: rem(6px);
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 30px;
+      @include sprite($icon-contacts);
+    }
+  }
+
+  &__contacts {
+    border: 2px solid #1a83b0;
+    background: rgba(8, 55, 80, .8);
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 230px;
+    padding: rem(10px) rem(15px);
+    color: #fff;
+    transition: opacity .2s;
+
+      &_hidden {
+        opacity: 0;
+      }
+  }
+
+  &__contacts-item {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: rem(16px);
+
+    & + & {
+      margin-top: rem(3px);
     }
   }
 }

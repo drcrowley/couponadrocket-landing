@@ -21,5 +21,10 @@
   &__link {
     color: #fff;
     text-decoration: none;
+    transition: opacity .2s;
+
+    &:hover {
+      opacity: .6;
+    }
   }
 }

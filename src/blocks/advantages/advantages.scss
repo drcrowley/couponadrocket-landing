@@ -1,10 +1,18 @@
 .advantages {
   &__holder {
     @include holder;
+
+    @include mq($until: tablet) {
+      text-align: center;
+    }
   }
 
   &__list {
     @include clearfix;
+
+    @include mq($until: tablet) {
+      display: inline-block;
+    }
   }
 
   &__row {

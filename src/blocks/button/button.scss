@@ -10,6 +10,7 @@
   color: inherit;
   display: inline-block;
   vertical-align: middle;
+  transition: background .2s;
   
   &:hover {
     background: darken($yellow-color, 10%);

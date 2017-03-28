@@ -27,10 +27,13 @@
   }
 
   .t-main & {
-    // background: transparent;
     position:  absolute;
     top: 0;
     left: 0;
     right: 0;
+
+    @include mq($until: tablet) {
+      position: relative;
+    }
   }
 }

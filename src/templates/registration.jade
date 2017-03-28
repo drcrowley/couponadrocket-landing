@@ -24,10 +24,11 @@ block main
         +checkbox({
           id: 'reg-agree', 
           required: true, 
-          text: 'Я принимаю условия <br/><a href="agreement.html" class="enter__link">пользовательского соглашения</a> и <a href="rules.html" class="enter__link">правила сервиса</a>',
+          text: 'Я принимаю условия <br/><a href="agreement.html" class="enter__link" target="_blank">пользовательского соглашения</a> и <a href="rules.html" class="enter__link" target="_blank">правила сервиса</a>',
           errorMessage: 'Необходимо принять условия пользовательского соглашения',
         }).form__checkbox.enter__agree
         button(type="submit").button.button_form.button_block.form__button.enter__button Зарегистрироваться
         .form__error
 block footer
   +footer()
+ 

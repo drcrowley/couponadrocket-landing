@@ -9,7 +9,7 @@
   display: block;
   position: relative;
   cursor: pointer;
-  margin-top: rem(15px);
+  margin-top: rem(25px);
   outline: none;
   animation: bounce 2.5s ease infinite;
   @include mq($until: tablet) {
