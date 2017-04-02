@@ -59,6 +59,9 @@ gulp.task('templates', function () {
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
     .pipe(jade({
+      locals: {
+        isDev: isDev
+      },
       pretty: true
     }))
     .pipe(prettify({indent_size: 2}))

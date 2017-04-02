@@ -31,6 +31,7 @@
     padding-right: rem(6px);
     box-sizing: border-box;
     @include column(3);
+
     @include mq($until: tablet) {
       float: none;
       width: auto;
@@ -89,6 +90,22 @@
     margin-bottom: rem(33px);
   }
 
+  &__item_gray &__title {
+    background: #666;
+  }
+
+  &__item_gray &__total {
+    background: #999;
+  } 
+
+  &__item_blue &__title {
+    background: #165673;
+  }
+
+  &__item_blue &__total {
+    background: #287ca1;
+  }   
+
   &__item_green &__title {
     background: #457417;
   }
@@ -97,27 +114,20 @@
     background: #6cb920;
   }
 
-  &__item_purple &__title {
-    background: #6f3887;
+  &__item_green &__title {
+    background: #457417;
   }
 
-  &__item_purple &__total {
-    background: #5c2973;
+  &__item_green &__total {
+    background: #6cb920;
   }
 
-  &__item_orange &__title {
-    background: #bc4628;
+  &__item_gold &__title {
+    background: #cc9900;
   }
 
-  &__item_orange &__total {
-    background: #de6141;
-  }
-
-  &__item_blue &__title {
-    background: #165673;
-  }
-
-  &__item_blue &__total {
-    background: #287ca1;
+  &__item_gold &__total {
+    background: #f9bf13;
   }  
+ 
 }
