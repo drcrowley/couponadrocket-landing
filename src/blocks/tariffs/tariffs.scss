@@ -52,7 +52,7 @@
     border-width: 0 1px 1px 1px;
     box-sizing: border-box;
   }
-    
+
   &__title {
     color: #fff;
     font-size: rem(22px);
@@ -96,7 +96,7 @@
 
   &__item_gray &__total {
     background: #999;
-  } 
+  }
 
   &__item_blue &__title {
     background: #165673;
@@ -104,7 +104,7 @@
 
   &__item_blue &__total {
     background: #287ca1;
-  }   
+  }
 
   &__item_green &__title {
     background: #457417;
@@ -123,11 +123,11 @@
   }
 
   &__item_gold &__title {
-    background: #cc9900;
+    background: #990000;
   }
 
   &__item_gold &__total {
-    background: #f9bf13;
-  }  
- 
+    background: #CC0000;
+  }
+
 }
