@@ -3,7 +3,7 @@ include ../blocks/header/header
 include ../blocks/footer/footer
 
 block vars
-  - var title = 'Подтверждение e-mail'; 
+  - var title = 'Подтверждение e-mail';
 
 block header
   +header()
@@ -13,9 +13,9 @@ block main
     .content
       h1.content__title Произошла ошибка при подтверждении вашего e-mail
       .content__box
-<p>К сожалению при подтверждении вашего емайла произошла ошибка.<p>
-<p>Свяжитесь пожалуйста с нами support@couponadrocket.ru для устранения этой неполадки.<p>
+        p К сожалению при подтверждении вашего емайла произошла ошибка.
+        p Свяжитесь пожалуйста с нами support@couponadrocket.ru для устранения этой неполадки.
 
-<p><em>С уважением, команда CouponAdRocket!</em></p>
+        p С уважением, команда CouponAdRocket!
 block footer
   +footer()
