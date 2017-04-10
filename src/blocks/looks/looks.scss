@@ -16,9 +16,16 @@
     text-align: center;
     font-size: rem(34px);
     font-weight: 300;
-    margin-bottom: rem(54px);
     position: relative;
-    z-index: 1
+    z-index: 1;
+    margin-bottom: rem(15px);
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: rem(54px);
+    color: #252525;
+    font-size: rem(20px);
   }
 
   &__link {

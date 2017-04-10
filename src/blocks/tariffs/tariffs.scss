@@ -62,7 +62,7 @@
 
   &__total {
     color: #fff;
-    padding: rem(35px) rem(5px);
+    padding: rem(35px) rem(5px) rem(10px);
   }
 
   &__price {
@@ -71,7 +71,13 @@
   }
 
   &__label {
-    font-size: rem(16px);
+    font-size: rem(14px);
+  }
+
+  &__sale {
+    min-height: 30px;
+    font-size: rem(20px);
+    margin-top: rem(3px);
   }
 
   &__info {
@@ -83,11 +89,19 @@
     font-size: rem(23px);
     font-weight: 700;
     text-transform: uppercase;
+    line-height: 1;
   }
 
   &__text {
     text-transform: uppercase;
-    margin-bottom: rem(33px);
+    margin-bottom: rem(10px);
+  }
+
+  &__action {
+    min-height: 38px;
+    padding: 0 rem(25px);
+    text-transform: uppercase;
+    margin-bottom: rem(10px);    
   }
 
   &__item_gray &__title {
