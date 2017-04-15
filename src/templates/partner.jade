@@ -1,0 +1,23 @@
+extends _layouts/layout
+include ../blocks/header/header
+include ../blocks/footer/footer
+
+block vars
+  - var title = 'Партнерская программа';
+
+block header
+  +header()
+
+block main
+  .page__holder
+    .content
+      h1.content__title Как стать партнером?
+      .content__box
+        ol
+          li Зарегистрируйтесь в сервисе.
+          li Сразу после регистрации отправьте запрос на e-mail support@couponadrocket.ru о том, что вы хотите стать партнером. Внимание, запрос нужно отправить с e-mail`а на который зарегистрирован аккаунт.
+          li Вы получите уникальную ссылку, переходящие по которой пользователи, будут закрепляться за вами.
+          li Каждый месяц, вы будете получать отчет об оплатах привлеченных клиентов.
+        p Приумножайте свой доход с CouponAdRocket!
+block footer
+  +footer()

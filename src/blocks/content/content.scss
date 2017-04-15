@@ -69,12 +69,17 @@
         position: absolute;
         line-height: 1;
         left: 0;
-        top: 5px;
+        top: 3px;
         margin-right: rem(10px);
         counter-increment: li; 
         content: counters(li,".") ". "; 
       }      
     }
+  }
+
+  &__box > ol,
+  &__box > ul {
+    margin-bottom: rem(20px);
   }
 
   a {

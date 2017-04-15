@@ -1,6 +1,7 @@
 node_modules/
 bower_components/
 build/
+.idea/
 .sass-cache
 .DS_Store
 .idea/
