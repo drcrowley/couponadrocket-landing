@@ -12,8 +12,15 @@
     text-align: center;
     font-size: rem(34px);
     font-weight: 300;
-    margin-bottom: rem(54px);
+    margin-bottom: rem(40px);
     position: relative;
+  }
+
+  &__description {
+    text-align: center;
+    margin-bottom: rem(40px);
+    color: #252525;
+    font-size: rem(20px);
   }
 
   &__row {
