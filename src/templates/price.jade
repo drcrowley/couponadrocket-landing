@@ -1,0 +1,12 @@
+extends _layouts/layout
+include ../blocks/header/header
+include ../blocks/footer/footer
+include ../blocks/tariffs/tariffs
+
+block header
+  +header()
+
+block main
+  +tariffs()
+block footer
+  +footer()

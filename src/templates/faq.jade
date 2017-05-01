@@ -1,0 +1,12 @@
+extends _layouts/layout
+include ../blocks/header/header
+include ../blocks/footer/footer
+include ../blocks/faq/faq
+
+block header
+  +header()
+
+block main
+  +faq()
+block footer
+  +footer()

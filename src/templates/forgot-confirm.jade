@@ -1,0 +1,21 @@
+extends _layouts/layout
+include ../blocks/header/header
+include ../blocks/footer/footer
+
+block vars
+  - var title = 'Пароль отправлен';
+
+block header
+  +header()
+
+block main
+  .page__holder
+    .content
+      h1.content__title Пароль отправлен
+      .content__box
+        p На указанный вами e-mail мы выслали письмо с новым паролем.
+
+        p Удачного рабочего дня!
+        p С уважением, команда CouponAdRocket!
+block footer
+  +footer()

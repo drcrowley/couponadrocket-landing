@@ -13,6 +13,7 @@
   
   &__holder {
     @include holder;
+    max-width: 950px;
   }
 
   &__head {
@@ -33,13 +34,14 @@
   }
 
   &__title {
-    font-size: rem(37px);
+    font-size: rem(25px);
     font-weight: 300;
-    margin-bottom: rem(28px);
+    margin-bottom: rem(15px);
   }
 
   &__text {
     font-size: rem(18px);
+    font-weight: 300;
   }
 
   &__item {
@@ -84,32 +86,32 @@
   }
 
   &__item_first &__image {
-    top: -20px;
+    top: -40px;
     left: 160px;
     width: 130px;
   }
 
   &__item_two &__image {
-    top: -30px;
+    top: -40px;
     left: 0px;
     width: 365px;
   }
 
   &__item_three &__image {
-    top: -40px;
+    top: -70px;
     right: 0;
     width: 430px;
   }
 
   &__item_four &__image {
-    top: -10px;
+    top: -25px;
     left: 0px;
-    width: 430px;
+    width: 400px;
   }
 
   &__item_five &__image {
     top: -60px;
     right: 0px;
-    width: 405px;
+    width: 380px;
   } 
 }

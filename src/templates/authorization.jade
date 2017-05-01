@@ -20,5 +20,8 @@ block main
           input(type="password", placeholder="Пароль", name="pwd", required, maxlength="40").form__input
         button(type="submit").button.button_form.button_block.form__button.enter__button Войти
         .form__error
+        .form__text
+          p Нет аккаунта? <a class="form__link" href="/registration.html">Зарегистрироваться</a>
+          p <a class="form__link" href="/forgot-password.html">Забыл пароль</a>
 block footer
   +footer()
